@@ -1,0 +1,49 @@
+<%= form_for @relative, html: { multipart: true } do |f| %>
+<% if @relative.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@relative.errors.count, "error") %> prohibited this relative from being saved:</h2>
+
+  <ul>
+    <% @relative.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :first_name %><br>
+  <%= f.text_field :first_name %>
+</div>
+
+<div class="field">
+  <%= f.label :last_name %><br>
+  <%= f.text_field :last_name %>
+</div>
+
+<div class="field">
+  <%= f.label :age %><br>
+  <%= f.text_field :age %>
+</div>
+
+<div class="field">
+  <%= f.label :birthday %><br>
+  <%= f.text_field :birthday %>
+</div>
+
+<div class="field">
+  <%= f.label :biography %><br>
+  <%= f.text_area :biography %>
+</div>
+
+<div class="field">
+  <%= f.label :image %><br>
+  <%= f.file_field :image %>
+</div>
+
+<%= f.hidden_field :scrapbook_id, :value => current_user.id%>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

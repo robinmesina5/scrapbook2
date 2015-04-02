@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Scrapbooks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scrapbooks.each do |scrapbook| %>
+      <tr>
+        <td><%= link_to 'Show', scrapbook %></td>
+        <td><%= link_to 'Edit', edit_scrapbook_path(scrapbook) %></td>
+        <td><%= link_to 'Destroy', scrapbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scrapbook', new_scrapbook_path %>

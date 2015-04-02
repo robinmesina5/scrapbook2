@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<div class="family-members">
+	<% @relatives.each do |relative| %>	
+	<div class="member">
+		<% if relative.user_id == current_user.id %>
+		<p> <%= relative.first_name %> </p>
+		<p> <%= relative.last_name %> </p>
+		<p> <%= image_tag relative.image.url(:medium) %> </p>
+		<% end %>
+	</div>
+	<% end %>
+</div>
+
+<%= link_to 'Add Relative', new_relative_path %>
+<%= link_to 'Back', scrapbooks_path %>

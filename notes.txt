@@ -1,0 +1,19 @@
+- changed 'require_tree .' to 'require_directory .' in application.css
+- moved active_admin css and js to admin folders
+- Now you need to change your Active Admin initializer to grab the two files you just excluded in steps 1 and 2: In file config/initializers/active_admin.rb add the following lines:
+
+config.clear_stylesheets!
+config.register_stylesheet 'admin/active_admin.css'
+
+config.clear_javascripts!
+config.register_javascript 'admin/active_admin.js'
+
+*** TODO ***
+
+- style
+- render relatives to scrapbook#show
+- incorporate javascript/jQuery/d3
+- cancan gem
+- paperclip gem
+
+x auth is done

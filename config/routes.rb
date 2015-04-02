@@ -1,0 +1,13 @@
+Rails.application.routes.draw do
+  resources :relatives, :only => [:index, :create, :new, :update, :destroy, :show, :edit, :delete]
+
+  resources :scrapbooks, :only => [:index, :create, :new, :update, :destroy, :show, :delete]
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  devise_for :users
+
+  resources :users, :only => [:create, :new]
+  
+  root :to => 'welcome#index'
+end
