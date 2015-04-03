@@ -34,9 +34,17 @@ gem 'pry-rails', group: :development
 
 gem 'devise', '~> 3.4.1'
 
-gem 'cancancan', '~> 1.10'
+gem 'd3-rails'
 
 gem "paperclip", "~> 4.2"
+
+gem "bourbon", "~> 4.0"
+
+gem 'bitters'
+
+gem 'neat'
+
+gem 'materialize-sass'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 

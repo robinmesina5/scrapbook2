@@ -1,21 +1,5 @@
 console.log('loaded relative.js');
 
-// var relativeTree = function(rel){
-
-// 	var familyMembers = d3.select('.family-members');
-
-// 	familyMembers.selectAll('div')
-// 		.data(rel)
-// 		.exit()
-// 		.remove();
-
-// 	familyMembers.selectAll('div')
-// 		.data(rel)
-// 		.enter()
-// 		.append('div');
-		
-// }
-
 var w = 900,
     h = 400;
 

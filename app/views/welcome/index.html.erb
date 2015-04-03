@@ -1,6 +1,6 @@
 <h1>Welcome to Scrapbook!</h1>
 
 	<% if current_user %>
-		<%= link_to 'View Family Scrapbook', scrapbook_path(current_user) %>
+		<%= link_to 'View Family Scrapbook', scrapbook_path(current_user.id) %>
 
 	<% end %>

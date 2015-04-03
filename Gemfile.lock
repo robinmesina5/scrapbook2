@@ -60,13 +60,16 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bitters (1.0.0)
+      bourbon (>= 3.2)
+      sass (>= 3.2)
+      thor
     bourbon (4.2.1)
       sass (~> 3.4)
       thor
     builder (3.2.2)
     byebug (4.0.4)
       columnize (= 0.9.0)
-    cancancan (1.10.1)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.7)
@@ -80,6 +83,8 @@ GEM
       execjs
     coffee-script-source (1.9.1)
     columnize (0.9.0)
+    d3-rails (3.5.5)
+      railties (>= 3.1)
     debug_inspector (0.0.2)
     devise (3.4.1)
       bcrypt (~> 3.0)
@@ -122,11 +127,16 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    materialize-sass (0.95.3.4)
+      sass (~> 3.3)
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.11.0)
+    neat (1.7.2)
+      bourbon (>= 4.0)
+      sass (>= 3.3)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
@@ -226,12 +236,16 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  bitters
+  bourbon (~> 4.0)
   byebug
-  cancancan (~> 1.10)
   coffee-rails (~> 4.1.0)
+  d3-rails
   devise (~> 3.4.1)
   jbuilder (~> 2.0)
   jquery-rails
+  materialize-sass
+  neat
   paperclip (~> 4.2)
   pg
   pry-rails
