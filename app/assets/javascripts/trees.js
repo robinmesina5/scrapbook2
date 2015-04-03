@@ -1,14 +1,25 @@
 window.onload = function(){
 console.log('loaded trees.js');
 
-  var data = [
-  { "name" : "Mitch", "parent":"Leonidas and Teresa", "relation": "ghi", "depth": 1 },
-  { "name" : "Leonidas and Teresa", "parent":"null", "relation": "null", "depth": 0 },
-  { "name" : "Lenny", "parent":"Mitch", "relation": "rel", "depth": 2 },
-  { "name" : "Justin", "parent":"Mitch", "relation": "foo", "depth": 2 },
-  { "name" : "Ramon", "parent":"Leonidas and Teresa", "relation": "rel", "depth": 1 }
+var data = [
+  { "name": "Mitch", "parent": "Leonidas and Teresa", "relation": "rel", "depth": 1 },
+  { "name": "Leonidas and Teresa", "parent": "null", "relation": "null", "depth": 0 },
+  { "name": "Lenny", "parent": "Mitch", "relation": "rel", "depth": 2 },
+  { "name": "Justin", "parent": "Mitch", "relation": "foo", "depth": 2 },
+  { "name": "Ramon", "parent": "Leonidas and Teresa", "relation": "rel", "depth": 1 },
+  { "name": "Robin", "parent": "Ramon", "relation": "rel", "depth": 2 },
+  { "name": "Bridget", "parent": "Ramon", "relation": "rel", "depth": 2 },
+  { "name": "Jesse", "parent": "Ramon", "relation": "rel", "depth": 2 },
+  { "name": "Caleb", "parent": "Jesse", "relation": "rel", "depth": 3 },
+  { "name": "Ava", "parent": "Jesse", "relation": "rel", "depth": 3 },
+  { "name": "Leah", "parent": "Leonidas and Teresa", "relation": "rel", "depth": 1 },
+  { "name": "Joey", "parent": "Leonidas and Teresa", "relation": "rel", "depth": 1 },
+  { "name": "Mark", "parent": "Leah", "relation": "rel", "depth": 2 },
+  { "name": "Kevin", "parent": "Leah", "relation": "rel", "depth": 2 },
+  { "name": "Derek", "parent": "Leah", "relation": "rel", "depth": 2 },
+  { "name": "James", "parent": "Mark", "relation": "rel", "depth": 3 },
+  { "name": "Collin", "parent": "Mark", "relation": "rel", "depth": 3 },
   ];
-
 
   var dataMap = data.reduce(function(map, node) {
   	map[node.name] = node;

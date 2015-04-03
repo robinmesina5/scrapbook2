@@ -44,7 +44,7 @@ class RelativesController < ApplicationController
 	private
 
 	def relative_params
-		params.require(:relative).permit(:first_name, :last_name, :scrapbook_id, :addresss, :age, :birthday, :date_of_death, :father, :mother, :child_one, :child_two, :child_three, :child_four, :child_five, :child_six, :occupation, :biography, :user_id, :image)
+		params.require(:relative).permit(:first_name, :last_name, :scrapbook_id, :addresss, :age, :birthday, :date_of_death, :father_id, :mother_id, :child_one, :child_two, :child_three, :child_four, :child_five, :child_six, :occupation, :biography, :user_id, :image)
 	end
 end
 

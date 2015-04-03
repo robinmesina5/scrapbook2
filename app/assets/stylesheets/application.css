@@ -16,8 +16,8 @@
  *= require_self
  */
 body, .stage {
-  background: #042029;
   color: aliceblue; 
+  background: #042029;
 }
 
 .node circle {
@@ -26,7 +26,10 @@ body, .stage {
 	  stroke-width: 3px;
 	}
 
-	.node text { font: 12px sans-serif; }
+	.node text { 
+		font: 12px sans-serif; 
+		color: steelblue;
+	}
 
 	.link {
 	  fill: none;
