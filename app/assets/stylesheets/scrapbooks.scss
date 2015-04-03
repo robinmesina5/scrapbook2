@@ -38,7 +38,6 @@
   }
 
   label img {
-    border-radius: $modal-trigger-image-width / 2;
     display: block;
     max-width: $modal-trigger-image-width;
   }
@@ -112,7 +111,7 @@
     width: 95%;
 
     @include media($medium-screen) {
-      max-height: 70%;
+      max-height: auto;
       padding: $modal-padding;
       width: 60%;
     }
@@ -167,4 +166,6 @@
 }
 
 // Based on code by Kasper Mikiewicz
+///////////////////////////////////////////////////////////////
+
 

@@ -1,22 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<div id="member">
 <% count = 1 %>
 <% @relatives.each do |relative| %>	
-<div class="member">
 	<% if relative.user_id == current_user.id %>
-	<p> <%= image_tag relative.image.url(:medium) %> </p>
-
 	<div class="modal">
 		<label for=<%= "modal-#{count}" %>>
-			<div class="modal-trigger"> <%= relative.first_name %> <%= relative.last_name %></div>
+			<div class="modal-trigger"><%= image_tag relative.image.url(:medium) %></div>
 		</label>
-		<input class="modal-state" id=<%= "modal-#{count}" %> type="checkbox" />
+		<input class="modal-state" id= <%= "modal-#{count}" %> type="checkbox" />
 		<div class="modal-fade-screen">
 			<div class="modal-inner">
 				<label class="modal-close" for=<%= "modal-#{count}" %>></label>
-				<h1><%= relative.first_name%> <%= relative.last_name %></h1>
-				<p class="modal-intro">Intro text lorem ipsum dolor sit ametm, quas, eaque facilis aliquid cupiditate tempora cumque ipsum accusantium illo modi commodi  minima.</p>
 				<p> <%= image_tag relative.image.url(:medium) %> </p>
+				<h1><%= relative.first_name%> <%= relative.last_name %></h1>
+				<p>Biography: <%= relative.biography %></p>
 			</div>
 		</div>
 	</div>

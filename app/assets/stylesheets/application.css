@@ -20,19 +20,3 @@ body, .stage {
   background: #042029;
 }
 
-.node circle {
-	  fill: #fff;
-	  stroke: steelblue;
-	  stroke-width: 3px;
-	}
-
-	.node text { 
-		font: 12px sans-serif; 
-		color: steelblue;
-	}
-
-	.link {
-	  fill: none;
-	  stroke: #ccc;
-	  stroke-width: 2px;
-	}

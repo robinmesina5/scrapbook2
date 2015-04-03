@@ -1,9 +1,10 @@
 class ScrapbooksController < ApplicationController
+	before_action :set_scrapbook, only: [:show, :edit, :update, :destroy]
 
 def index
 	@scrapbooks = Scrapbook.all
 		respond_to do |format|
-			format.html
+			format.html { render :index }
 			format.json {
 				scrapbooks = Scrapbook.all
 				render :json => scrapbooks
@@ -26,14 +27,16 @@ def index
 	end
 
 	def update
-		scrapbook = Scrapbook.find(params[:id])
 		scrapbook.update(scrapbook_params)
 
 		redirect_to scrapbook_path(current_user.id)
 	end
 
+	def edit
+		@scrapbook = Scrapbook.find_by_user_id(current_user.id)
+	end
+
 	def destroy
-		scrapbook = Scrapbook.find(params[:id])
 		scrapbook.destroy
 
 		redirect_to root_path	
@@ -43,6 +46,10 @@ def index
 
     def scrapbook_params
       params.require(:scrapbook).permit(:name, :user_id, :relative_id)
+    end
+
+    def set_scrapbook
+			@scrapbook = Scrapbook.find(params[:id])
     end
 end
 

@@ -1,30 +1,39 @@
 window.onload = function(){
-console.log('loaded trees.js');
+  console.log('loaded trees.js');
+
+// $.ajax({
+//   method: 'get',
+//   url: '/data',
+//   dataType: 'json',
+//   success: function(data){
+//     console.log(data);
+//   }
+// });
 
 var data = [
-  { "name": "Mitch", "parent": "Leonidas and Teresa", "relation": "rel", "depth": 1 },
-  { "name": "Leonidas and Teresa", "parent": "null", "relation": "null", "depth": 0 },
-  { "name": "Lenny", "parent": "Mitch", "relation": "rel", "depth": 2 },
-  { "name": "Justin", "parent": "Mitch", "relation": "foo", "depth": 2 },
-  { "name": "Ramon", "parent": "Leonidas and Teresa", "relation": "rel", "depth": 1 },
-  { "name": "Robin", "parent": "Ramon", "relation": "rel", "depth": 2 },
-  { "name": "Bridget", "parent": "Ramon", "relation": "rel", "depth": 2 },
-  { "name": "Jesse", "parent": "Ramon", "relation": "rel", "depth": 2 },
-  { "name": "Caleb", "parent": "Jesse", "relation": "rel", "depth": 3 },
-  { "name": "Ava", "parent": "Jesse", "relation": "rel", "depth": 3 },
-  { "name": "Leah", "parent": "Leonidas and Teresa", "relation": "rel", "depth": 1 },
-  { "name": "Joey", "parent": "Leonidas and Teresa", "relation": "rel", "depth": 1 },
-  { "name": "Mark", "parent": "Leah", "relation": "rel", "depth": 2 },
-  { "name": "Kevin", "parent": "Leah", "relation": "rel", "depth": 2 },
-  { "name": "Derek", "parent": "Leah", "relation": "rel", "depth": 2 },
-  { "name": "James", "parent": "Mark", "relation": "rel", "depth": 3 },
-  { "name": "Collin", "parent": "Mark", "relation": "rel", "depth": 3 },
-  ];
+{ "name": "Mitch", "parent": "Leonidas and Teresa", "relation": "rel", "depth": 1 },
+{ "name": "Leonidas and Teresa", "parent": "null", "relation": "null", "depth": 0 },
+{ "name": "Lenny", "parent": "Mitch", "relation": "rel", "depth": 2 },
+{ "name": "Justin", "parent": "Mitch", "relation": "foo", "depth": 2 },
+{ "name": "Ramon", "parent": "Leonidas and Teresa", "relation": "rel", "depth": 1 },
+{ "name": "Robin", "parent": "Ramon", "relation": "rel", "depth": 2 },
+{ "name": "Bridget", "parent": "Ramon", "relation": "rel", "depth": 2 },
+{ "name": "Jesse", "parent": "Ramon", "relation": "rel", "depth": 2 },
+{ "name": "Caleb", "parent": "Jesse", "relation": "rel", "depth": 3 },
+{ "name": "Ava", "parent": "Jesse", "relation": "rel", "depth": 3 },
+{ "name": "Leah", "parent": "Leonidas and Teresa", "relation": "rel", "depth": 1 },
+{ "name": "Joey", "parent": "Leonidas and Teresa", "relation": "rel", "depth": 1 },
+{ "name": "Mark", "parent": "Leah", "relation": "rel", "depth": 2 },
+{ "name": "Kevin", "parent": "Leah", "relation": "rel", "depth": 2 },
+{ "name": "Derek", "parent": "Leah", "relation": "rel", "depth": 2 },
+{ "name": "James", "parent": "Mark", "relation": "rel", "depth": 3 },
+{ "name": "Collin", "parent": "Mark", "relation": "rel", "depth": 3 },
+];
 
-  var dataMap = data.reduce(function(map, node) {
-  	map[node.name] = node;
-  	return map;
-  }, {});
+var dataMap = data.reduce(function(map, node) {
+ map[node.name] = node;
+ return map;
+}, {});
 
 // create the tree array
 var treeData = [];
@@ -43,7 +52,7 @@ data.forEach(function(node) {
 });
 
 // ************** Generate the tree diagram  *****************
-var margin = {top: 20, right: 120, bottom: 20, left: 120},
+var margin = {top: 20, right: 160, bottom: 20, left: 160},
 width = 960 - margin.right - margin.left,
 height = 500 - margin.top - margin.bottom;
 
@@ -82,14 +91,11 @@ d3.select(self.frameElement).style("height", "800px");
 
 function update(source) {
 
-  // Compute the new tree layout.
   var nodes = tree.nodes(root).reverse(),
   links = tree.links(nodes);
 
-  // Normalize for fixed-depth.
   nodes.forEach(function(d) { d.y = d.depth * 180; });
 
-  // Update the nodes…
   var node = svg.selectAll("g.node")
   .data(nodes, function(d) { return d.id || (d.id = ++i); });
 
@@ -108,7 +114,8 @@ function update(source) {
   .attr("dy", ".35em")
   .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
   .text(function(d) { return d.name; })
-  .style("fill-opacity", 1e-6);
+  .style("fill-opacity", 1e-6)
+  .style("color", "steelblue");
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
@@ -178,7 +185,5 @@ function click(d) {
 	}
 	update(d);
 }
-
-
-	update(treeData)
+  update(treeData)
 }

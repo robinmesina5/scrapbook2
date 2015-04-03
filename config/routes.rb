@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :relatives, :only => [:index, :create, :new, :update, :destroy, :show, :edit, :delete]
 
-  resources :scrapbooks, :only => [:index, :create, :new, :update, :destroy, :show, :delete]
+  resources :scrapbooks, :only => [:index, :create, :new, :update, :destroy, :show, :delete, :edit]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
