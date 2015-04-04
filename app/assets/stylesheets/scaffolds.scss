@@ -19,9 +19,9 @@ pre {
 }
 
 a {
-  color: #000;
+  color: aliceblue;
   &:visited {
-    color: #666;
+    color: #aliceblue;
   }
   &:hover {
     color: #fff;
@@ -66,4 +66,8 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+#signout {
+  float: right;
 }

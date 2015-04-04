@@ -28,6 +28,7 @@ var data = [
 { "name": "Derek", "parent": "Leah", "relation": "rel", "depth": 2 },
 { "name": "James", "parent": "Mark", "relation": "rel", "depth": 3 },
 { "name": "Collin", "parent": "Mark", "relation": "rel", "depth": 3 },
+{ "name": "?", "parent": "Robin", "relation": "rel", "depth": 3 },
 ];
 
 var dataMap = data.reduce(function(map, node) {
@@ -52,7 +53,7 @@ data.forEach(function(node) {
 });
 
 // ************** Generate the tree diagram  *****************
-var margin = {top: 20, right: 160, bottom: 20, left: 160},
+var margin = {top: 20, right: 160, bottom: 20, left: 220},
 width = 960 - margin.right - margin.left,
 height = 500 - margin.top - margin.bottom;
 
@@ -185,5 +186,5 @@ function click(d) {
 	}
 	update(d);
 }
-  update(treeData)
+update(treeData)
 }

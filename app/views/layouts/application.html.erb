@@ -8,11 +8,29 @@
 </head>
 <body>
 	<% if current_user %>
-		<h4>Welcome Back, <%= current_user.username %> family! </h4>
-		<button><%= link_to "Sign Out", destroy_user_session_path, method: 'DELETE'  %></button>
+	<h4>Welcome back, <%= current_user.username %> family! </h4>
+	<button id="signout"><%= link_to "Sign Out", destroy_user_session_path, method: 'DELETE'  %></button>
 	<% else %>
-		<%= link_to 'Log In', new_user_session_path %>
+	<%= link_to 'Log In', new_user_session_path %>
 	<% end %>
+
+	<% if current_user %>
+	<button type="button" class="js-menu-trigger sliding-panel-button">
+		<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/menu-white.png" alt="Menu Icon">
+	</button>
+
+	<nav class="js-menu sliding-panel-content">
+		<ul>
+			<li> <%= link_to 'Home', root_path %> </li>
+			<li> <%= link_to 'Scrapbook', scrapbook_path(current_user.id) %> </li>
+			<li> <%= link_to 'Family Tree', trees_index_path %> </li>
+			<li> <%= link_to 'Relatives', relatives_path %> </li>
+		</ul>
+	</nav>
+
+	<div class="js-menu-screen sliding-panel-fade-screen"></div>
+	<% end %>
+
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
 	<%= yield %>

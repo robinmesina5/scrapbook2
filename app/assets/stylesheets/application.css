@@ -15,8 +15,16 @@
  *= require_directory .
  *= require_self
  */
-body, .stage {
+
+@import url(http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here);
+
+body {
   color: aliceblue; 
-  background: #042029;
+  background: #FFE4B5;
+}
+
+h1, h4 {
+	font-family: 'Montserrat', sans-serif;
+	color: steelblue;
 }
 

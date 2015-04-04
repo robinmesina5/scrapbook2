@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <div id="member">
-<% count = 1 %>
-<% @relatives.each do |relative| %>	
+	<% count = 1 %>
+	<% @relatives.each do |relative| %>	
 	<% if relative.user_id == current_user.id %>
 	<div class="modal">
 		<label for=<%= "modal-#{count}" %>>
