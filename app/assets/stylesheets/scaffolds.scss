@@ -68,6 +68,7 @@ div {
   }
 }
 
-#signout {
+#signout, #greeting {
   float: right;
+  clear: right;
 }

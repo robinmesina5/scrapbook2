@@ -23,6 +23,10 @@ body {
   background: #FFE4B5;
 }
 
+#droptop {
+	color: steelblue;
+}
+
 h1, h4 {
 	font-family: 'Montserrat', sans-serif;
 	color: steelblue;

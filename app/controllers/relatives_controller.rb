@@ -15,6 +15,7 @@ class RelativesController < ApplicationController
 
 	def new
 		@relative = Relative.new
+		@relatives = current_user.relatives.all
 	end
 
 	def edit

@@ -8,14 +8,14 @@
 </head>
 <body>
 	<% if current_user %>
-	<h4>Welcome back, <%= current_user.username %> family! </h4>
+	<h4 id="greeting">Welcome back, <%= current_user.username %> family! </h4>
 	<button id="signout"><%= link_to "Sign Out", destroy_user_session_path, method: 'DELETE'  %></button>
 	<% else %>
 	<%= link_to 'Log In', new_user_session_path %>
 	<% end %>
 
 	<% if current_user %>
-	<button type="button" class="js-menu-trigger sliding-panel-button">
+	<button id="menu-button" type="button" class="js-menu-trigger sliding-panel-button">
 		<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/menu-white.png" alt="Menu Icon">
 	</button>
 

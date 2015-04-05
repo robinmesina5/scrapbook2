@@ -33,12 +33,12 @@
 
 <div class="field">
   <%= f.label :father_id %><br>
-  <%= f.collection_select :father_id, Relative.all, :id, :first_name, include_blank: true  %>
+  <%= f.collection_select :father_id, current_user.relatives.all, :id, :first_name, include_blank: true  %>
 </div>
 
 <div class="field">
   <%= f.label :mother_id %><br>
-  <%= f.collection_select :mother_id, Relative.all, :id, :first_name, include_blank: true %>
+  <%= f.collection_select :mother_id, current_user.relatives.all, :id, :first_name, include_blank: true %>
 </div>
 
 <div class="field">
