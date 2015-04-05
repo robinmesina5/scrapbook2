@@ -1,2 +1,0 @@
-# DiagonalSlider
-Diagonal Slider
