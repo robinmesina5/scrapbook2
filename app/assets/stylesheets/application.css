@@ -23,9 +23,16 @@
  	color: steelblue;
  }
 
- h4, #text-welcome {
+ h4 {
  	font-family: 'Montserrat', sans-serif;
  	color: gainsboro;
+ }
+
+ #text-welcome, #login, #link-new-rel {
+ 	font-size: 18px;
+ 	font-family: 'Montserrat', sans-serif;
+ 	color: gainsboro;
+ 	line-height: 1.3em;
  }
 
  h1, a, label, td, button {

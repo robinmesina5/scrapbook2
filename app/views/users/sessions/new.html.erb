@@ -9,7 +9,6 @@
   #login, label, a {
     color: aliceblue;
   }
-  
   </style>
   <title></title>
 </head>
@@ -37,7 +36,7 @@
       <% end %>
 
       <div id="login_button" class="actions"> 
-        <%= f.submit "Log in" %>
+        <%= f.submit "Log in", :class => "submit-button" %>
       </div>
 
       <% end %>
@@ -45,17 +44,13 @@
       <div id="login_guest">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="actions">
-          <%= f.submit "Log in as Guest" %>
+          <%= f.submit "Log in as Guest", :class => "submit-button" %>
           <%= f.hidden_field :username, value: 'guest' %>
           <%= f.hidden_field :password, value: '!!!!!!!!' %>
         </div>
       </div>
 
       <% end %>
-
-      <div id="link-new-rel">
-        <%= link_to 'Administrator Login', new_admin_user_session_path %>
-      </div>
 
       <%= render "users/shared/links" %>
     </div>

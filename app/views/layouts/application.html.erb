@@ -12,6 +12,7 @@
 	<h3 id="greeting">Welcome back, <%= current_user.username %> family! </h3>
 	<% else %>
 	<p id="login"> <%= link_to 'Login', new_user_session_path %> </p>
+	<p id="link-new-rel"> <%= link_to 'Administrator Login', new_admin_user_session_path %> </p>
 	<% end %>
 
 	<% if current_user %>
