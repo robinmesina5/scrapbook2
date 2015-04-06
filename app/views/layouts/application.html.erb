@@ -7,27 +7,31 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
+
 	<% if current_user %>
-	<h4 id="greeting">Welcome back, <%= current_user.username %> family! </h4>
-	<button id="signout"><%= link_to "Sign Out", destroy_user_session_path, method: 'DELETE'  %></button>
-	<% else %>
-	<%= link_to 'Log In', new_user_session_path %>
+	<h3 id="greeting">Welcome back, <%= current_user.username %> family! </h3>
 	<% end %>
 
 	<% if current_user %>
 	<button id="menu-button" type="button" class="js-menu-trigger sliding-panel-button">
-		<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/menu-white.png" alt="Menu Icon">
+		<h3 id="menu">Menu</h3>
 	</button>
 
 	<nav class="js-menu sliding-panel-content">
 		<ul>
 			<li> <%= link_to 'Home', root_path %> </li>
 			<li> <%= link_to 'Scrapbook', scrapbook_path(current_user.id) %> </li>
+			<% if current_user %>
+				<li> <%= link_to 'Edit Scrapbook', edit_scrapbook_path(current_user.id) %> </li>
+			<% end %>
 			<li> <%= link_to 'Family Tree', trees_index_path %> </li>
 			<li> <%= link_to 'Relatives', relatives_path %> </li>
+			<% if current_user %>
+				<li> <%= link_to 'Add Relatives', new_relative_path %> </li>
+				<li> <%= link_to "Sign Out", destroy_user_session_path, method: 'DELETE'  %> </li>
+			<% end %>
 		</ul>
 	</nav>
-
 	<div class="js-menu-screen sliding-panel-fade-screen"></div>
 	<% end %>
 

@@ -16,19 +16,42 @@
  *= require_self
  */
 
-@import url(https://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here);
+ @import url(https://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here);
+ @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-body {
-  color: aliceblue; 
-  background: #FFE4B5;
-}
+ h3, a {
+ 	color: steelblue;
+ }
 
-#droptop {
-	color: steelblue;
-}
+ h4, #text-welcome {
+ 	font-family: 'Montserrat', sans-serif;
+ 	color: gainsboro;
+ }
 
-h1, h4 {
-	font-family: 'Montserrat', sans-serif;
-	color: steelblue;
-}
+ h1, a, label, td, button {
+ 	font-family: 'Montserrat', sans-serif;
+ 	color: darkslategray;
+ }
 
+ #logo, #greeting {
+ 	color: gainsboro;
+ }
+
+ a {
+ 	text-decoration: none;
+ }
+
+ input[type = text] {
+ 	font-family: 'Montserrat', sans-serif;
+ 	color: darkslategray;
+ }
+
+ input[type = file] {
+ 	font-family: 'Montserrat', sans-serif;
+ 	color: darkslategray;
+ }
+
+ input[type = submit] {
+ 	font-family: 'Montserrat', sans-serif;
+ 	color: darkslategray;
+ }

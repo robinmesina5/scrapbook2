@@ -68,22 +68,22 @@
 }
 
 .sliding-panel-button {
-  @include button(flat, #4682B4);
-  padding: 10px 16px;
+  @include button(flat, gainsboro);
+  padding: 0 10px;
   display: inline-block;
   cursor: pointer;
   position: relative;
   outline: none;
 
   img {
-    height: 1.3em;
+    height: 1.0em;
   }
 
 }
 
 button {
-  @include button(flat, #4682B4 );
-  padding: 0.7em 1em;
+  @include button(flat, gainsboro );
+  padding: 0.7em 0.5em;
 }
 
 // Based on code by Diego Eis
@@ -158,9 +158,17 @@ button {
 }
 
 #login_guest {
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 #login_button {
-  margin-top: 40px;
+  margin-top: 10px;
+}
+
+#link-new-rel {
+  margin-top: 20px;
+}
+
+#login-box {
+  margin-top: 32%;
 }

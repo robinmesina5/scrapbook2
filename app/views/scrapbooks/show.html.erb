@@ -4,25 +4,25 @@
 	<% count = 1 %>
 	<% @relatives.each do |relative| %>	
 	<% if relative.user_id == current_user.id %>
-	<div class="modal">
-		<label for=<%= "modal-#{count}" %>>
-			<div class="modal-trigger"><%= image_tag relative.image.url(:medium) %></div>
-		</label>
-		<input class="modal-state" id= <%= "modal-#{count}" %> type="checkbox" />
-		<div class="modal-fade-screen">
-			<div class="modal-inner">
-				<label class="modal-close" for=<%= "modal-#{count}" %>></label>
-				<p> <%= image_tag relative.image.url(:medium) %> </p>
-				<h1><%= relative.first_name%> <%= relative.last_name %></h1>
-				<p>Biography: <%= relative.biography %></p>
+	<div class="family-member">
+		<div class="modal">
+			<label for=<%= "modal-#{count}" %>>
+				<div class="modal-trigger"><%= image_tag relative.image.url(:medium) %></div>
+			</label>
+			<input class="modal-state" id= <%= "modal-#{count}" %> type="checkbox" />
+			<div class="modal-fade-screen">
+				<div class="modal-inner">
+					<label class="modal-close" for=<%= "modal-#{count}" %>></label>
+					<p> <%= image_tag relative.image.url(:medium) %> </p>
+					<h1><%= relative.first_name%> <%= relative.last_name %></h1>
+					<p>Biography: <%= relative.biography %></p>
+				</div>
 			</div>
 		</div>
 	</div>
 	<% end %>
+	<% count += 1 %>
+	<% end %>
 </div>
-<% count += 1 %>
-<% end %>
 
-<%= link_to 'Add Relative', new_relative_path %>
-<%= link_to 'Back', scrapbooks_path %>
 
