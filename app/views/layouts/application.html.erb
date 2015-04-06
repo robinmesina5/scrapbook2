@@ -10,6 +10,8 @@
 
 	<% if current_user %>
 	<h3 id="greeting">Welcome back, <%= current_user.username %> family! </h3>
+	<% else %>
+	<p id="login"> <%= link_to 'Login', new_user_session_path %> </p>
 	<% end %>
 
 	<% if current_user %>
@@ -22,13 +24,13 @@
 			<li> <%= link_to 'Home', root_path %> </li>
 			<li> <%= link_to 'Scrapbook', scrapbook_path(current_user.id) %> </li>
 			<% if current_user %>
-				<li> <%= link_to 'Edit Scrapbook', edit_scrapbook_path(current_user.id) %> </li>
+			<li> <%= link_to 'Edit Scrapbook', edit_scrapbook_path(current_user.id) %> </li>
 			<% end %>
 			<li> <%= link_to 'Family Tree', trees_index_path %> </li>
 			<li> <%= link_to 'Relatives', relatives_path %> </li>
 			<% if current_user %>
-				<li> <%= link_to 'Add Relatives', new_relative_path %> </li>
-				<li> <%= link_to "Sign Out", destroy_user_session_path, method: 'DELETE'  %> </li>
+			<li> <%= link_to 'Add Relatives', new_relative_path %> </li>
+			<li> <%= link_to "Sign Out", destroy_user_session_path, method: 'DELETE'  %> </li>
 			<% end %>
 		</ul>
 	</nav>
